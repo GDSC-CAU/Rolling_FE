@@ -1,0 +1,88 @@
+/* 기본 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+.view-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100vh;
+  background-color: #18863180; /* 오른쪽 배경색 */
+}
+
+.video-section {
+  flex: 7; /* 70% 비디오 영역 */
+  margin-right: 20px;
+  background-color:#18863180; /* 비디오 배경색을 어두운 색으로 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 0px; /* 비디오를 아래로 내리기 */
+}
+
+.video-player {
+  width: 100%; /* 비디오 크기 조정 */
+  height: auto;
+  border-radius: 10px;
+}
+
+.info-section {
+  flex: 3; /* 30% 글 및 사진 영역 */
+  background-color: hwb(134 5% 59% / 0.741);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px hwb(134 5% 59% / 0.741);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-photo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.user-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.user-info {
+  font-size: 18px;
+  width: 100%;
+  font-family: 'Patrick Hand', cursive; /* Patrick Hand 폰트 적용 */
+  color: rgba(255, 255, 255, 0.842);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px; /* 항목 간 간격 띄우기 */
+}
+
+.info-item label {
+  font-weight: bold;
+  width: 120px;
+}
+
+.info-item span {
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .view-container {
+    flex-direction: column;
+  }
+
+  .video-section,
+  .info-section {
+    flex: none;
+    width: 100%;
+    margin: 10px 0;
+  }
+}

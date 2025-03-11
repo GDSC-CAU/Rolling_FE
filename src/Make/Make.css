@@ -1,0 +1,66 @@
+.make-container {
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  padding-top: 50px; /* 폼과 제목을 아래로 내리기 */
+  background-image: url("./board.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100vh;
+  font-family: 'Patrick Hand', cursive;
+  font-size:30px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  margin-top: 50px; /* 제목을 조금 아래로 내리기 */
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 30px; /* 폼을 조금 아래로 내리기 */
+}
+
+label {
+  display: inline-block;  /* label을 인라인 블록으로 배치 */
+  width: 100px;  /* label 크기 고정 */
+  font-weight: bold;
+  font-size: 28px;
+  margin-right: 20px;  /* 라벨과 입력란 사이의 간격을 추가 */
+  padding-right: 10px;  /* 라벨에 오른쪽 여백 추가 */
+}
+
+input, textarea {
+  display: inline-block;
+  width: 300px;  /* 입력 필드 크기 고정 */
+  padding: 8px;
+  margin-left: 10px;  /* 텍스트와 입력란 간의 간격 */
+  margin-bottom: 20px;
+  background-color: hsla(0, 8%, 60%, 0.206);
+  color: white;
+  border: 2px solid rgba(15, 187, 109, 0.206);
+  border-radius: 10px; 
+}
+
+button {
+  background-color: hwb(120 49% 15%);
+  color: white;
+  padding: 10px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px; 
+}
+
+button:hover {
+  background-color: hsla(0, 11%, 83%, 0.357);
+}
+
+.emoji-placeholder {
+  position: absolute;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}

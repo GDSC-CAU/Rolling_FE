@@ -1,0 +1,49 @@
+.person-container {
+  position: relative;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* 메시지가 절대 위치에 있을 수 있도록 */
+}
+
+
+.message-box {
+  position: absolute;
+  top: 40%; /* 페이지 상단에 표시 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(128, 128, 128, 0.7); /* 회색 투명 배경 */
+  color: white; /* 텍스트 색상 */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.add-rollpaper-button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-rollpaper-button:hover {
+  background-color: #e67e22;
+}
+
+.page-title {
+  position: absolute;
+  top: 12%;  /* 상단 여백 */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 35px;
+  font-weight: bold;
+  color: black;
+}

@@ -1,0 +1,87 @@
+/* 배경 이미지 적용 */
+.main-container {
+  text-align: center;
+  background-image: url("./background.jpeg"); /* 배경 이미지 추가 */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* 제목 위치를 절대값으로 조정할 수 있게 */
+}
+
+/* 제목 스타일 변경 */
+.title {
+  font-family: "Dancing Script", cursive;
+  color: #f318e1 !important;  /* 원하는 색상으로 변경 */
+  position: absolute; /* 제목을 절대 위치로 설정 */
+  top: 5%;  /* 상단에서 10% 위치 */
+  left: 50%;  /* 화면 중앙으로 정렬 */
+  transform: translateX(-50%); /* 정확히 중앙에 오도록 */
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+/* 사용자 추가 버튼 스타일 */
+.add-user-btn {
+  background-color: #83dff1;
+  color: white;
+  padding: 15px; /* padding을 동일하게 설정하여 정사각형 모양으로 */
+  border: none;
+  cursor: pointer;
+  position: absolute; /* 절대 위치로 이동 */
+  top: 30%; /* 상단에서 15% 위치로 설정 */
+  left: 50%; /* 중앙에 오도록 설정 */
+  transform: translateX(-50%); /* 정확히 중앙에 오도록 */
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 45px; /* 정사각형을 만들기 위해 width 설정 */
+  height: 45px; /* 정사각형 모양을 위해 height도 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-user-btn:hover {
+  background-color: #f318e1;
+}
+
+/* 사용자 리스트 스타일 */
+.user-list {
+  display: flex;
+  justify-content: flex-start; /* 왼쪽부터 차례로 정렬 */
+  flex-wrap: wrap;
+  gap: 70px; /* 사용자 버튼 간격 */
+  width: 80%;
+}
+
+.user-btn {
+  background-color: transparent; /* 배경 제거 */
+  border: none;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  background-size: cover; /* 이미지가 버튼을 꽉 채우도록 */
+  background-position: center;
+  border-radius: 50%; /* 동그랗게 만들기 */
+  background-image: url("./profile.png"); /* 공통 이미지 */
+}
+
+.user-btn:hover {
+  opacity: 0.8;
+}
+
+.user-name {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+
