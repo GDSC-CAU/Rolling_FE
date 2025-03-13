@@ -70,8 +70,8 @@
 }
 
 .info-item span {
-  font-size: 16px;
-  color: #333;
+  font-size: 25px;
+  color: hsl(0, 0%, 100%);
 }
 
 @media (max-width: 768px) {

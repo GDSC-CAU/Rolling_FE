@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<Main onUserSelect={handleUserSelect} />} />
         <Route path="/person/:userName" element={<Person />} /> {/* userName을 URL에서 가져옴 */}
         <Route path="/make/:userName" element={<Make />} />
-        <Route path="/view/:userName" element={<View />} />
+        <Route path="/view/:userId/:memberId" element={<View />} />
       </Routes>
     </Router>
   );

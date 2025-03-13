@@ -1,35 +1,47 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import "./View.css";
 
-const BASE_URL = "http://localhost:8080/api"; // 백엔드 주소
-
 const View = () => {
-  const { userId, memberId } = useParams();
-  const [memberData, setMemberData] = useState(null);
-
+  const { userId, memberId } = useParams(); 
+  const [memberData, setMemberData] = useState(null); // ✅ useState 추가
+  console.log("Clicked Member ID:", memberId);
+  console.log("Current User ID:", userId);
+  
   useEffect(() => {
-    axios
-      .get(`${BASE_URL}/papers/${userId}/members/${memberId}`)
-      .then((response) => {
-        console.log("멤버 데이터 불러오기 성공:", response.data);
-        setMemberData(response.data);
-      })
-      .catch((error) => {
-        console.error("멤버 데이터 불러오기 실패:", error);
-      });
+    if (!userId || !memberId) return;
+
+    const fetchMemberData = async () => {
+      try {
+        const response = await fetch(`http://13.124.189.66:8080/api/papers/${userId}/members/${memberId}`);
+        if (!response.ok) {
+          throw new Error("데이터를 불러오는 데 실패했습니다.");
+        }
+        const data = await response.json();
+        setMemberData(data); // ✅ 상태 업데이트
+      } catch (error) {
+        console.error("Error fetching member data:", error);
+      }
+    };
+
+    fetchMemberData();
   }, [userId, memberId]);
 
-  if (!memberData) return <div>Loading...</div>;
+  if (!userId || !memberId) {
+    return <p>잘못된 접근입니다.</p>;
+  }
+
+  if (!memberData) {
+    return <p>데이터 로딩 중...</p>;
+  }
 
   return (
     <div className="view-container">
       {/* 비디오 섹션 */}
       <div className="video-section">
-        {memberData.videoUrl ? (
+        {memberData.video ? (
           <video className="video-player" controls>
-            <source src={memberData.videoUrl} type="video/mp4" />
+            <source src={memberData.video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         ) : (
@@ -37,24 +49,24 @@ const View = () => {
         )}
       </div>
 
-      {/* 정보 및 사진 섹션 */}
+      {/* 정보 섹션 */}
       <div className="info-section">
         <div className="user-info">
           <div className="info-item">
-            <label>이모지:</label>
+            <label>Emoji:</label>
             <span>{memberData.emoji}</span>
           </div>
           <div className="info-item">
-            <label>이름:</label>
+            <label>Name:</label>
             <span>{memberData.name}</span>
           </div>
           <div className="info-item">
-            <label>전화번호:</label>
+            <label>Phone:</label>
             <span>{memberData.phone}</span>
           </div>
           <div className="info-item">
-            <label>인스타그램:</label>
-            <span>{memberData.insta}</span>
+            <label>Instagram:</label>
+            <span>{memberData.instagram ? memberData.instagram : "없음"}</span>
           </div>
           <div className="info-item">
             <label>P.S.:</label>
