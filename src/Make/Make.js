@@ -3,12 +3,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Make.css";
 
-const BASE_URL = "http://localhost:8080/api"; // 백엔드 주소
+const BASE_URL = "http://13.124.189.66:8080/api"; // 백엔드 주소
 
 const Make = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { userId, coordinate, userName } = location.state || {}; // paperId → userId 유지, userName 추가
+  const { userId, coordinate, userName } = location.state || {}; // userId, userName, 좌표 정보 포함
 
   const [emoji, setEmoji] = useState("");
   const [name, setName] = useState("");
@@ -68,7 +68,7 @@ const Make = () => {
 
   return (
     <div className="make-container">
-      <h2>To. {userName || "알 수 없음"}</h2>
+      <h2>To. {userName}</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label>Emoji:</label>

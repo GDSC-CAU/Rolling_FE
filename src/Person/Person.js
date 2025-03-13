@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./Person.css";
-import classroomBackground from "./clssroom.jpg";
+import classroomBackground from "./classroom.jpeg";
 
-const BASE_URL = "http://localhost:8080/api"; // 백엔드 주소
+const BASE_URL = "http://13.124.189.66:8080/api"; // 백엔드 주소
 
 const Person = () => {
   const location = useLocation();
@@ -57,10 +57,13 @@ const Person = () => {
     }
   };
 
-  // ✅ 멤버 클릭 시 View 페이지로 이동
-  const handleMemberClick = (memberId) => {
+  const handleMemberClick = (memberId) => { 
     navigate(`/view/${userId}/${memberId}`);
   };
+
+  
+  
+  
 
   return (
     <div
@@ -96,7 +99,7 @@ const Person = () => {
           }}
           onClick={() => handleMemberClick(member.id)}
         >
-          <span style={{ fontSize: "60px" }}>{member.emoji}</span>
+          <span style={{ fontSize: "80px" }}>{member.emoji}</span>
           <span style={{ marginLeft: "7px", fontSize: "20px", fontWeight: "bold", color: "black" }}>
             {member.name}
           </span>

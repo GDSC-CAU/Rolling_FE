@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Main.css";
 
-const BASE_URL = "http://localhost:8080/api"; // 백엔드 주소
+const BASE_URL = "http://13.124.189.66:8080/api"; // 백엔드 주소
+
 
 const Main = () => {
   const [users, setUsers] = useState([]); // 유저 목록
